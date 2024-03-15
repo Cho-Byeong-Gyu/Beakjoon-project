@@ -1,4 +1,4 @@
-﻿/*
+/*
 제목: BEAKJOON 25304번 문제 
 날짜: 2024.03.08.금
 내용: 
@@ -29,13 +29,13 @@ b가 공백을 사이에 두고 주어진다.
 
 제한
  
-$1 ≤ X ≤ 1\,000\,000\,000$ 
+1 ≤ X ≤ 1,000,000,000
  
-$1 ≤ N ≤ 100$ 
+1 ≤ N ≤ 100$
  
-$1 ≤ a ≤ 1\,000\,000$ 
+1 ≤ a ≤ 1,000,000 
  
-$1 ≤ b ≤ 10$ 
+1 ≤ b ≤ 10
 
 예제 입력 1
 260000
@@ -59,35 +59,29 @@ int main() {
 	int total = 0;
 	int billtotal = 0;
 	int type = 0;
-	int arr1[20] = {0,};
-	int arr2[20] = {0,};
-	
+	int money = 0;
+	int count = 0;
 
-	printf("영수증에 적힌 총 금액: ");
-	scanf("%d", &total);
-	printf("\n");
 
-	printf("영수증에 적힌 구매물건 종류의 갯수: ");
-	scanf("%d", &type);
-	printf("\n");
+	scanf("%d", &total);			// total 금액 입력받기
 
-	for (int i = 0; i < type; i++) {
+	scanf("%d", &type);				// 영주증에 적힌 구매물건과 종류의 갯수 입력받기
 
-		printf("%d번째 구매물품 가격: ", i+1);
-		scanf("%d", arr1[i]);
-		printf("\n");
-		printf("%d번째 구매물품 갯수: ", i+1);
-		scanf("%d", arr2[i]);
-		printf("\n");
 
-		billtotal = billtotal + arr1[i] * arr2[i];
+
+	for (int i = 0; i < type; i++) {			// 입력받은 type만큼 반복문 횟수제한
+
+		scanf("%d %d", &money, &count);					// 품목 가격, 갯수 입력받기
+
+
+		billtotal += (money * count);		// 추가 품목들 총합 계산
 	}
 
-	if (total == billtotal) {
-		printf("영수증 금액과 일치합니다");
+	if (total == billtotal) {								// 입력받은 total 금액과 영수증 계산한 금액 비교
+		printf("Yes");
 	}
 	else {
-		printf("영수증 금액과 일치하지 않습니다.");
+		printf("No");
 	}
 	return 0;
 }
