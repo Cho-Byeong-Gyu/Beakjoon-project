@@ -16,7 +16,6 @@ public class BEAKJOON_1152 {
 		// (System.in)에서 키보드를 통해byteSteam 형태로 입력받은 값을 InputStreamReader를 활용해 문자스트림형태로 변환시켜주고 BufferedReader를 통해 한꺼번에 데이터를 처리하여 데이터처리성능을 올림
 		String str = br.readLine().trim();					// 문자열 입력받기 + 양끝에 있는 스페이스바떄문에 생기는 오차는 trim을 활용해 잡아줌
 		
-		
 		if (str.equals("")) {								// 사용자가 문자열을 제대로 입력했는지 검증하기
 			System.out.println(0);					
 			return;
